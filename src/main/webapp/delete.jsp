@@ -1,16 +1,17 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: admin
-  Date: 2023-02-08
-  Time: 오후 5:50
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="com.example.wifiproject8.service.HistoryService" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-  <head>
-    <title>$Title$</title>
-  </head>
-  <body>
-  $END$
-  </body>
+<head>
+    <title>와이파이 정보 구하기</title>
+</head>
+<body>
+<%
+    HistoryService historyService = new HistoryService();
+    int result = historyService.deleteHistory(Integer.parseInt(request.getParameter("id")));
+
+%>
+<script>
+    location.href="history.jsp";
+</script>
+</body>
 </html>
